@@ -40,22 +40,22 @@ def main():
     parser.add_argument('cmd', type=str,  choices=['train', 'test', 'extract'], help='train, test or extract')
     parser.add_argument('--arch_type', type=str, default='resnet50_ft', help='model type',
                         choices=['resnet50_ft', 'senet50_ft', 'resnet50_scratch', 'senet50_scratch'])
-    parser.add_argument('--dataset_dir', type=str, default='/path/to/dataset_directory', help='dataset directory')
-    parser.add_argument('--log_file', type=str, default='/path/to/log_file', help='log file')
-    parser.add_argument('--train_img_list_file', type=str, default='/path/to/train_image_list.txt',
+    parser.add_argument('--dataset_dir', type=str, default='/cs/labs/daphna/daphna/data/vggface2', help='dataset directory')
+    parser.add_argument('--log_file', type=str, default='/cs/snapless/daphna/idan.azuri/VGGFace2-pytorch', help='log file')
+    parser.add_argument('--train_img_list_file', type=str, default='/cs/labs/daphna/daphna/data/vggface2/train_image_list.txt',
                         help='text file containing image files used for training')
-    parser.add_argument('--test_img_list_file', type=str, default='/path/to/test_image_list.txt',
+    parser.add_argument('--test_img_list_file', type=str, default='/cs/labs/daphna/daphna/data/vggface2/test_image_list.txt',
                         help='text file containing image files used for validation, test or feature extraction')
-    parser.add_argument('--meta_file', type=str, default='/path/to/identity_meta.csv', help='meta file')
-    parser.add_argument('--checkpoint_dir', type=str, default='/path/to/checkpoint_directory',
+    parser.add_argument('--meta_file', type=str, default='/cs/labs/daphna/daphna/data/vggface2/identity_meta.csv', help='meta file')
+    parser.add_argument('--checkpoint_dir', type=str, default='/cs/snapless/daphna/idan.azuri/VGGFace2-pytorch/ckpt',
                         help='checkpoints directory')
-    parser.add_argument('--feature_dir', type=str, default='/path/to/feature_directory',
+    parser.add_argument('--feature_dir', type=str, default='//cs/snapless/daphna/idan.azuri/VGGFace2-pytorch/feature_directory',
                         help='directory where extracted features are saved')
     parser.add_argument('-c', '--config', type=int, default=1, choices=configurations.keys(),
                         help='the number of settings and hyperparameters used in training')
     parser.add_argument('--batch_size', type=int, default=32, help='batch size')
     parser.add_argument('--resume', type=str, default='', help='checkpoint file')
-    parser.add_argument('--weight_file', type=str, default='/path/to/weight_file.pkl', help='weight file')
+    parser.add_argument('--weight_file', type=str, default='/cs/snapless/daphna/idan.azuri/VGGFace2-pytorch/weight_file.pkl', help='weight file')
     parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
                         help='number of data loading workers (default: 4)')
