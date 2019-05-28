@@ -38,7 +38,7 @@ N_IDENTITY = 8631  # the number of identities in VGGFace2 for which ResNet and S
 def main():
     parser = argparse.ArgumentParser("PyTorch Face Recognizer")
     parser.add_argument('cmd', type=str,  choices=['train', 'test', 'extract'], help='train, test or extract')
-    parser.add_argument('--arch_type', type=str, default='resnet50_ft', help='model type',
+    parser.add_argument('--arch_type', type=str, default='resnet50_scratch', help='model type',
                         choices=['resnet50_ft', 'senet50_ft', 'resnet50_scratch', 'senet50_scratch'])
     parser.add_argument('--dataset_dir', type=str, default='/cs/labs/daphna/daphna/data/vggface2', help='dataset directory')
     parser.add_argument('--log_file', type=str, default='/cs/snapless/daphna/idan.azuri/VGGFace2-pytorch', help='log file')
@@ -49,7 +49,7 @@ def main():
     parser.add_argument('--meta_file', type=str, default='/cs/labs/daphna/daphna/data/vggface2/identity_meta.csv', help='meta file')
     parser.add_argument('--checkpoint_dir', type=str, default='/cs/snapless/daphna/idan.azuri/VGGFace2-pytorch/ckpt',
                         help='checkpoints directory')
-    parser.add_argument('--feature_dir', type=str, default='//cs/snapless/daphna/idan.azuri/VGGFace2-pytorch/feature_directory',
+    parser.add_argument('--feature_dir', type=str, default='/cs/snapless/daphna/idan.azuri/VGGFace2-pytorch/feature_directory',
                         help='directory where extracted features are saved')
     parser.add_argument('-c', '--config', type=int, default=1, choices=configurations.keys(),
                         help='the number of settings and hyperparameters used in training')
